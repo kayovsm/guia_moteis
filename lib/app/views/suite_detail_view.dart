@@ -77,12 +77,10 @@ class SuiteDetailView extends StatelessWidget {
                   Expanded(child: Divider(color: Colors.grey)),
                 ],
               ),
-              Expanded(
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 16),
-                  child: DescriptionTextApp(
-                    text: suite.itens.join(', '),
-                  ),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 16),
+                child: DescriptionTextApp(
+                  text: suite.itens.join(', '),
                 ),
               ),
             ],

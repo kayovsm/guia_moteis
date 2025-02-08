@@ -11,6 +11,7 @@ import 'package:provider/provider.dart';
 import '../models/suite_model.dart';
 import 'feedback_view.dart';
 import 'suite_detail_view.dart';
+import 'suite_reservation_view.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key, required this.title});
@@ -223,7 +224,7 @@ class _HomeViewState extends State<HomeView> {
               _buildSuiteDetailsCard(suite, iconsToShow),
               _buildIconCard(
                   suite.categoriaItens, iconsToShow, suite.nome, suite),
-              _buildSuitePricingCard(suite),
+              _buildSuitePricingCard(suite, motel),
             ],
           );
         },
@@ -306,7 +307,7 @@ class _HomeViewState extends State<HomeView> {
     );
   }
 
-  Widget _buildSuitePricingCard(SuiteModel suite) {
+  Widget _buildSuitePricingCard(SuiteModel suite, MotelModel motel) {
     return Card(
       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
       color: Colors.white,
@@ -334,7 +335,17 @@ class _HomeViewState extends State<HomeView> {
                 fontSize: 22),
             SizedBox(height: 6),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => SuiteReservationView(
+                      suite: suite,
+                      motel: motel,
+                    ),
+                  ),
+                );
+              },
               child: Row(
                 children: [
                   Expanded(
