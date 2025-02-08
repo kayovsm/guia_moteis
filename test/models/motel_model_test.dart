@@ -1,5 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:guia_moteis/app/models/motel_model.dart';
+import 'package:guia_moteis/app/models/periodo_model.dart';
+import 'package:guia_moteis/app/models/suite_model.dart';
 
 void main() {
   group('PeriodoModel', () {

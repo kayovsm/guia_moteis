@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:guia_moteis/app/models/motel_model.dart';
-import 'package:guia_moteis/app/widgets/example_widget.dart';
+import 'package:guia_moteis/app/models/periodo_model.dart';
+import 'package:guia_moteis/app/models/suite_model.dart';
 import 'package:network_image_mock/network_image_mock.dart';
+
+import 'widgets/example_widget.dart';
 
 void main() {
   setUpAll(() {
@@ -28,8 +31,15 @@ void main() {
             fotos: ['test/assets/image_test.png'],
             itens: ['Item 1', 'Item 2'],
             periodos: [
-              PeriodoModel(tempoFormatado: '3 horas', valor: 100.0),
+              PeriodoModel(
+                tempoFormatado: '3 horas',
+                valor: 100.0,
+                tempo: '',
+                valorTotal: 0.0,
+                temCortesia: false,
+              ),
             ],
+            categoriaItens: [],
           ),
         ],
       );
